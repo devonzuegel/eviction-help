@@ -7,3 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+
+Question.create([
+  {
+    question: "Were you served an eviction notice within the last 5 days?",
+    description: nil,
+    required: true,
+  }
+])
