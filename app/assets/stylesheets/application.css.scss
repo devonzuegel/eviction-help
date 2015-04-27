@@ -20,7 +20,7 @@
 @import "partials/all";
 
 body { 
-  background-color: #eee;
+  background: #eee !important;
   margin: 0;
   padding: 0;
 
@@ -36,30 +36,29 @@ body {
   }
 }
 
-#apartments {   
-  background-image: image-url("apartments.jpg");
-  opacity: .8;
-  // background: linear-gradient(
-  //               rgba(100,0,10,0.4),
-  //               rgba(0,0,0,0)
-  //             ), image-url('apartments.jpg');
-  background-size: cover;
+#apartments {
   min-height: 97%;
   min-width: 100%;
-  background-repeat: none;
-}
 
-nav { 
-  @include span(12 of 12);
-}
+  &:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
-.small {
-  @include span(2 of 12);
-  background-color: red;
+    background-image: image-url("apartments.jpg");
+    opacity: .8;
+    background-size: cover;
+    background-repeat: none;
+    min-height: 100%;
+    min-width: 100%;
+  }
 }
 
 .borders {
-  background: #eee;
+  background-color: white;
   position: fixed;
   z-index: 2000;
 
