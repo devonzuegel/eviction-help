@@ -17,11 +17,7 @@
 
 @import "compass";
 @import "susy";
-
-@mixin blur($px: 0) {
-  -webkit-filter: blur($px);     
-  filter: blur($px);
-}
+@import "partials/all";
 
 body { 
   background-color: #eee;
@@ -35,37 +31,26 @@ body {
   @include container(100%);
 
   .body {
-    padding: 0;
+    padding: 90px;
     margin: 1em 2em 4em 2em;
   }
 }
 
 #apartments {   
   background-image: image-url("apartments.jpg");
-  opacity: .9;
+  opacity: .8;
   // background: linear-gradient(
   //               rgba(100,0,10,0.4),
   //               rgba(0,0,0,0)
   //             ), image-url('apartments.jpg');
   background-size: cover;
-  min-height: 99%;
+  min-height: 97%;
   min-width: 100%;
   background-repeat: none;
 }
 
 nav { 
   @include span(12 of 12);
-}
-
-.row {
-
-}
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
 }
 
 .small {

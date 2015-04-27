@@ -1,0 +1,5 @@
+
+@mixin blur($px: 0) {
+  -webkit-filter: blur($px);     
+  filter: blur($px);
+}
