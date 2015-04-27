@@ -1,0 +1,8 @@
+.row
+  h3 Users
+  .col-xs-6
+    table.table
+      tbody
+        - @users.each do |user|
+          tr
+            = render user
