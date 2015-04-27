@@ -1,4 +1,13 @@
-h3 Welcome
-p
-  = link_to 'Users:', users_path
-  |  #{User.count} registered
+#apartments.body: .row
+  .col-lg-5
+
+    h1.main
+      | Tenant support, simplified.
+
+    button= link_to "Let's get started >"
+    /, evictees_path
+  .col-lg-1
+  .col-lg-6
+    .info
+      p Has your landlord told you that you have to move out?
+      p The eviction process is complex. We're here to help.

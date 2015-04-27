@@ -1,0 +1,13 @@
+
+$blue: #2d73bf;
+$blue-dark:  shade($blue, 10%);
+$grey: #444;
+$grey-dark: shade($grey, 10%);
+
+$default-text-shadow-color: rgba(white, 1);
+$default-text-shadow-blur: 3px;
+$default-text-shadow-v-offset: 0px;
+
+$break-sm: 768px;
+$break-md: 992px;
+$break-lg: 1200px;
