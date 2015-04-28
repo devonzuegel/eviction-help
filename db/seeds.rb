@@ -15,7 +15,9 @@ Question.create([
     required:     true,
     kind:         "question",
     prev:         nil,
+    response1:    "Yes",
     next1:        nil,
+    response2:    "No",
     next2:        nil,
   },
 
@@ -25,7 +27,9 @@ Question.create([
     required:     true,
     kind:         "question",
     prev:         nil,
+    response1:    "Yes",
     next1:        nil,
+    response2:    "No",
     next2:        nil,
   },
 
@@ -35,7 +39,9 @@ Question.create([
     required:     true,
     kind:         "question",
     prev:         nil,
+    response1:    "Yes",
     next1:        nil,
+    response2:    "No",
     next2:        nil,
   },
 
@@ -45,7 +51,9 @@ Question.create([
     required:     true,
     kind:         "advice",
     prev:         nil,
+    response1:    nil,
     next1:        nil,
+    response2:    nil,
     next2:        nil,
   },
 
@@ -55,7 +63,9 @@ Question.create([
     required:     true,
     kind:         "question",
     prev:         nil,
+    response1:    "Yes",
     next1:        nil,
+    response2:    "No",
     next2:        nil,
   },
 
@@ -65,7 +75,9 @@ Question.create([
     required:     true,
     kind:         "question",
     prev:         nil,
+    response1:    "Yes",
     next1:        nil,
+    response2:    "No",
     next2:        nil,
   },
 
@@ -75,7 +87,9 @@ Question.create([
     required:     true,
     kind:         "advice",
     prev:         nil,
+    response1:    nil,
     next1:        nil,
+    response2:    nil,
     next2:        nil,
   },
 
@@ -85,7 +99,9 @@ Question.create([
     required:     true,
     kind:         "question",
     prev:         nil,
+    response1:    "Yes",
     next1:        nil,
+    response2:    "No",
     next2:        nil,
   },
 
@@ -95,7 +111,9 @@ Question.create([
     required:     true,
     kind:         "advice",
     prev:         nil,
+    response1:    nil,
     next1:        nil,
+    response2:    nil,
     next2:        nil,
   },
 
@@ -105,7 +123,9 @@ Question.create([
     required:     true,
     kind:         "question",
     prev:         nil,
+    response1:    "Yes",
     next1:        nil,
+    response2:    "No",
     next2:        nil,
   },
 
@@ -115,7 +135,9 @@ Question.create([
     required:     true,
     kind:         "advice",
     prev:         nil,
+    response1:    nil,
     next1:        nil,
+    response2:    nil,
     next2:        nil,
   },
 
@@ -125,7 +147,9 @@ Question.create([
     required:     true,
     kind:         "advice",
     prev:         nil,
+    response1:    nil,
     next1:        nil,
+    response2:    nil,
     next2:        nil,
   },
 

@@ -2,8 +2,9 @@
 $blue: #2d73bf;
 $blue-dark:  shade($blue, 10%);
 
-$grey-pale: #f3f3f3;
 $grey: #444;
+$grey-pale: #f3f3f3;
+$grey-light: lighten($grey, 55%);
 $grey-dark: shade($grey, 10%);
 
 $default-text-shadow-color: rgba(white, 1);

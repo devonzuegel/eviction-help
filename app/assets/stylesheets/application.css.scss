@@ -17,6 +17,11 @@
 
 @import "partials/all";
 
+.inactive {
+  color: $grey-light;
+  font-style: italic;
+}
+
 body { 
   background: $grey-pale !important;
   margin: 0;
