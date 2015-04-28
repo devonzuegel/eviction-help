@@ -24,6 +24,7 @@ gem 'unicorn'
 gem 'unicorn-rails'
 
 group :development do
+  gem 'pry-rails'
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'

@@ -149,6 +149,9 @@ questions = [
   }
 ]
 
+ask = (question) ->
+  
+
 curr = questions[0]
 while curr != null
   console.log curr.text
