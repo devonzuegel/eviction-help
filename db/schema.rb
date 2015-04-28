@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428205926) do
+ActiveRecord::Schema.define(version: 20150428212640) do
 
   create_table "questions", force: :cascade do |t|
     t.text     "title"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20150428205926) do
     t.integer  "prev_id"
     t.integer  "next1_id"
     t.integer  "next2_id"
+    t.text     "response1"
+    t.text     "response2"
   end
 
   create_table "tenants", force: :cascade do |t|

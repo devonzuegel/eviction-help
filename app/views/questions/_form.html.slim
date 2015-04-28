@@ -5,8 +5,13 @@
       ul
         - @question.errors.full_messages.each do |message|
           li= message
+  table
+    tr
+      td= f.label :title
+      td= f.text_area :title
 
-  = f.label :title
-  = f.text_area :title
+    tr
+      td= f.label :response1
+      td= f.text_area :response1
 
   .actions= f.submit

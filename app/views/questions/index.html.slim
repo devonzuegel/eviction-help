@@ -13,7 +13,9 @@ table
       th Question
       th Description
       th Previous
+      th Response1
       th Next1
+      th Response2
       th Next2
       th
       th
@@ -25,7 +27,9 @@ table
         td= q.title
         td= q.description
         td= q.prev
+        td= q.response1
         td= q.next1
+        td= q.response2
         td= q.next2
         td= link_to 'Edit', edit_question_path(q)
         td= link_to 'Delete', q, data: {:confirm => 'Are you sure?'}, :method => :delete
