@@ -10,9 +10,124 @@ puts 'CREATED ADMIN USER: ' << user.email
 
 Question.create([
   {
-    question: "Were you served an eviction notice within the last 5 days?",
-    description: nil,
-    required: true,
-    kind: "boolean"
-  }
+    question:     "Has your landlord given you a 60-day notice terminating your tenancy?",
+    description:  nil,
+    required:     true,
+    kind:         "question",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Has your landlord served you a 3-day notice to cure or quit?",
+    description:  nil,
+    required:     true,
+    kind:         "question",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Have more than 3 days passed since your landlord served you the notice?",
+    description:  nil,
+    required:     true,
+    kind:         "question",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Good news!",
+    description:  "Since fewer than 3 days have passed since your landlord served you the notice, you still have a chance to resolve this dispute outside of the courts. {more info...}",
+    required:     true,
+    kind:         "advice",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Has your landlord filed an Unlawful Detainer lawsuit at the Court?",
+    description:  nil,
+    required:     true,
+    kind:         "question",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Did (s)he file the lawsuit within the past 5 days?",
+    description:  nil,
+    required:     true,
+    kind:         "question",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Default Judgement",
+    description:  "Unfortunately, tenants automatically lose Unlawful Detainer lawsuits if they don't respond within 5 days. You should expect a Sheriff's Notice within the next 1-5 days, and if you do not move within 6-8 days the Sheriff will evict you in person.",
+    required:     true,
+    kind:         "advice",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Have you filed an answer to the lawsuit?",
+    description:  nil,
+    required:     true,
+    kind:         "question",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Here is information about further legal resources.",
+    description:  nil,
+    required:     true,
+    kind:         "advice",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Do you live in San Mateo County?",
+    description:  nil,
+    required:     true,
+    kind:         "question",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "Good news!",
+    description:  "We can help you file your answer to the lawsuit.",
+    required:     true,
+    kind:         "advice",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+  {
+    question:     "We don't serve your county quite yet, but here is information about further legal resources.",
+    description:  nil,
+    required:     true,
+    kind:         "advice",
+    prev:         nil,
+    next1:        nil,
+    next2:        nil,
+  },
+
+
 ])

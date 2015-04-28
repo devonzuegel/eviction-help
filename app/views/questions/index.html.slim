@@ -3,16 +3,22 @@ h1 Listing questions
 table
   thead
     tr
+      th id
+      th Question
+      th Description
       th
       th
       th
 
   tbody
-    - @questions.each do |question|
+    - @questions.each do |q|
       tr
-        td = link_to 'Show', question
-        td = link_to 'Edit', edit_question_path(question)
-        td = link_to 'Destroy', question, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td= q.id
+        td= q.question
+        td= q.description
+        td= link_to 'Show', q
+        td= link_to 'Edit', edit_question_path(q)
+        td= link_to 'Delete', q, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
