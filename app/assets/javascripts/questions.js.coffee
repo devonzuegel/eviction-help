@@ -1,6 +1,3 @@
-class Question
-  constructor: (@text, @description, @required, @next) ->,
-
 questions = [
   {
     type: "question",
@@ -151,3 +148,9 @@ questions = [
     description: null,
   }
 ]
+
+curr = questions[0]
+while curr != null
+  console.log curr.text
+  next = curr.responses[0].next
+  curr = if next then questions[next] else null
