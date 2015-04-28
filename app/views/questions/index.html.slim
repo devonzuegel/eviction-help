@@ -4,7 +4,6 @@ h1 Questions
 .pull-right= link_to '+ New Question', new_question_path
 
 br
-br
 
 table
   thead
@@ -23,20 +22,13 @@ table
   tbody
     - @questions.each do |q|
       tr
-        td= q.id || "n/a"
-        td class=('inactive' if !q.title)
-          = q.title || "n/a"
-        td class=('inactive' if !q.description)
-          = q.description || "n/a"
-        td class=('inactive' if !q.prev)
-          = q.prev || "n/a"
-        td class=('inactive' if !q.response1)
-          = q.response1 || "n/a"
-        td class=('inactive' if !q.next1)
-          = q.next1 || "n/a"
-        td class=('inactive' if !q.response2)
-          = q.response2 || "n/a"
-        td class=('inactive' if !q.next2)
-          = q.next2 || "n/a"
-        td= link_to 'Edit', edit_question_path(q)
-        td= link_to 'Delete', q, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td                                      = q.id          || "n/a"
+        td class=('inactive' if !q.title)       = q.title       || "n/a"
+        td class=('inactive' if !q.description) = q.description || "n/a"
+        td class=('inactive' if !q.prev)        = q.prev_id     || "n/a"
+        td class=('inactive' if !q.response1)   = q.response1   || "n/a"
+        td class=('inactive' if !q.next1)       = q.next1_id    || "n/a"
+        td class=('inactive' if !q.response2)   = q.response2   || "n/a"
+        td class=('inactive' if !q.next2)       = q.next2_id    || "n/a"
+        td                                      = link_to 'Edit', edit_question_path(q)
+        td                                      = link_to 'Delete', q, data: {:confirm => 'Are you sure?'}, :method => :delete

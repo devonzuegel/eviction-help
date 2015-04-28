@@ -11,7 +11,30 @@
       td= f.text_area :title
 
     tr
-      td= f.label :response1
+      td= f.label :description
+      td= f.text_area :description
+
+    tr
+      td= f.label :prev_id, "Previous question"
+      td= f.select :prev_id,
+          [nil] + Question.all.collect { |q| ["#{q.title} #{q.description}", q.id] }
+
+    tr
+      td= f.label :response1, "Response option 1"
       td= f.text_area :response1
+
+    tr
+      td= f.label :next1_id, "Next question to ask after choosing option 1"
+      td= f.select :next1_id,
+          [nil] + Question.all.collect { |q| ["#{q.title} #{q.description}", q.id] }
+
+    tr
+      td= f.label :response2, "Response option 2"
+      td= f.text_area :response2
+
+    tr
+      td= f.label :next2_id, "Next question to ask after choosing option 2"
+      td= f.select :next2_id,
+          [nil] + Question.all.collect { |q| ["#{q.title} #{q.description}", q.id] }
 
   .actions= f.submit
