@@ -9,10 +9,10 @@ questions = [
     responses: [
       {
         text: "Yes",
-        next: null,
+        next: 4,
       }, {
         text: "No",
-        next: null,
+        next: 1,
       }
     ]
   },
@@ -24,7 +24,7 @@ questions = [
     responses: [
       {
         text: "Yes",
-        next: null,
+        next: 2,
       }, {
         text: "No",
         next: null,
@@ -39,10 +39,10 @@ questions = [
     responses: [
       {
         text: "Yes",
-        next: null,
+        next: 4,
       }, {
         text: "No",
-        next: null,
+        next: 3,
       }
     ]
   },
@@ -60,7 +60,7 @@ questions = [
     responses: [
       {
         text: "Yes",
-        next: null,
+        next: 5,
       }, {
         text: "No",
         next: null,
@@ -75,10 +75,10 @@ questions = [
     responses: [
       {
         text: "Yes",
-        next: null,
+        next: 7,
       }, {
         text: "No",
-        next: null,
+        next: 6,
       }
     ],
   },
@@ -97,10 +97,10 @@ questions = [
     responses: [
       {
         text: "Yes",
-        next: null,
+        next: 8,
       }, {
         text: "No",
-        next: null,
+        next: 9,
       }
     ],
   },
@@ -128,10 +128,10 @@ questions = [
     responses: [
       {
         text: "Yes",
-        next: null,
+        next: 10,
       }, {
         text: "No",
-        next: null,
+        next: 11,
       }
     ],
   },
