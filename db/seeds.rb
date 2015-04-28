@@ -13,5 +13,6 @@ Question.create([
     question: "Were you served an eviction notice within the last 5 days?",
     description: nil,
     required: true,
+    kind: "boolean"
   }
 ])
