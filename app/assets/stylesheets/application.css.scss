@@ -102,7 +102,7 @@ body {
   }
 }
 
-button {
+button, .button_to input[type='submit'] {
   background-color: $grey;
   border: none;
   color: white !important;

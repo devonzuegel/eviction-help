@@ -10,7 +10,7 @@ puts 'CREATED ADMIN USER: ' << user.email
 
 Question.create([
   {
-    question:     "Has your landlord given you a 60-day notice terminating your tenancy?",
+    title:        "Has your landlord given you a 60-day notice terminating your tenancy?",
     description:  nil,
     required:     true,
     kind:         "question",
@@ -20,7 +20,7 @@ Question.create([
   },
 
   {
-    question:     "Has your landlord served you a 3-day notice to cure or quit?",
+    title:        "Has your landlord served you a 3-day notice to cure or quit?",
     description:  nil,
     required:     true,
     kind:         "question",
@@ -30,7 +30,7 @@ Question.create([
   },
 
   {
-    question:     "Have more than 3 days passed since your landlord served you the notice?",
+    title:        "Have more than 3 days passed since your landlord served you the notice?",
     description:  nil,
     required:     true,
     kind:         "question",
@@ -40,7 +40,7 @@ Question.create([
   },
 
   {
-    question:     "Good news!",
+    title:        "Good news!",
     description:  "Since fewer than 3 days have passed since your landlord served you the notice, you still have a chance to resolve this dispute outside of the courts. {more info...}",
     required:     true,
     kind:         "advice",
@@ -50,7 +50,7 @@ Question.create([
   },
 
   {
-    question:     "Has your landlord filed an Unlawful Detainer lawsuit at the Court?",
+    title:        "Has your landlord filed an Unlawful Detainer lawsuit at the Court?",
     description:  nil,
     required:     true,
     kind:         "question",
@@ -60,7 +60,7 @@ Question.create([
   },
 
   {
-    question:     "Did (s)he file the lawsuit within the past 5 days?",
+    title:        "Did (s)he file the lawsuit within the past 5 days?",
     description:  nil,
     required:     true,
     kind:         "question",
@@ -70,7 +70,7 @@ Question.create([
   },
 
   {
-    question:     "Default Judgement",
+    title:        "Default Judgement",
     description:  "Unfortunately, tenants automatically lose Unlawful Detainer lawsuits if they don't respond within 5 days. You should expect a Sheriff's Notice within the next 1-5 days, and if you do not move within 6-8 days the Sheriff will evict you in person.",
     required:     true,
     kind:         "advice",
@@ -80,7 +80,7 @@ Question.create([
   },
 
   {
-    question:     "Have you filed an answer to the lawsuit?",
+    title:        "Have you filed an answer to the lawsuit?",
     description:  nil,
     required:     true,
     kind:         "question",
@@ -90,7 +90,7 @@ Question.create([
   },
 
   {
-    question:     "Here is information about further legal resources.",
+    title:        "Here is information about further legal resources.",
     description:  nil,
     required:     true,
     kind:         "advice",
@@ -100,7 +100,7 @@ Question.create([
   },
 
   {
-    question:     "Do you live in San Mateo County?",
+    title:        "Do you live in San Mateo County?",
     description:  nil,
     required:     true,
     kind:         "question",
@@ -110,7 +110,7 @@ Question.create([
   },
 
   {
-    question:     "Good news!",
+    title:        "Good news!",
     description:  "We can help you file your answer to the lawsuit.",
     required:     true,
     kind:         "advice",
@@ -120,7 +120,7 @@ Question.create([
   },
 
   {
-    question:     "We don't serve your county quite yet, but here is information about further legal resources.",
+    title:        "We don't serve your county quite yet, but here is information about further legal resources.",
     description:  nil,
     required:     true,
     kind:         "advice",
