@@ -1,0 +1,4 @@
+.row
+- for q in @questions
+  .question_form id="question_#{q.id}"
+    = render "question_form", q: q

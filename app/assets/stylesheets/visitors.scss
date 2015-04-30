@@ -1,0 +1,15 @@
+@import "partials/all";
+
+.question_form {
+  display: none;
+
+  &.completed {
+    display: block;
+    opacity: .5;
+  } 
+
+  &.current {
+    display: block;
+    opacity: 1;
+  }
+}

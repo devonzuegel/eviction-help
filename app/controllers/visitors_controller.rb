@@ -1,6 +1,4 @@
 class VisitorsController < ApplicationController
-  steps :confirm_password, :confirm_profile, :find_friends
-
   def index
   end
 

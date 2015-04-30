@@ -17,23 +17,6 @@
 
 @import "partials/all";
 
-.inactive {
-  color: $grey-light;
-  font-style: italic;
-}
-
-select {
-  max-width: 500px;
-  word-wrap: break-word;
-}
-
-textarea {
-  width: 500px;
-  height: 100px;
-  border: 1px solid $grey-pale;
-  padding: 5px;
-}
-
 body { 
   background: $grey-pale !important;
   margin: 0;
@@ -42,15 +25,12 @@ body {
   height: 100%;
   width: 100%; 
   position: absolute;
-  
-  @include container(100%);
 
   .body {
     padding: 90px;
     margin: 1em 2em 0 2em;
   }
 }
-
 
 .info {
   background-color: rgba(white, .85);
