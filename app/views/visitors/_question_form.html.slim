@@ -11,8 +11,12 @@ h2= q.title
 - else
   =form_tag do
 
-    =label_tag :response1, "#{q.response1}"
-    =radio_button_tag :response1, "#{q.response1}"
+    .response
+      =label_tag         :response,  "#{q.response1}"
+      =radio_button_tag  :response,  q.next1_id
 
-    =label_tag :response2, "#{q.response2}"
-    =radio_button_tag :response2, "#{q.response2}"
+    .response
+      =label_tag         :response,  "#{q.response2}"
+      =radio_button_tag  :response,  q.next2_id
+
+    =submit_tag "Next"

@@ -1,12 +1,31 @@
 class QuestionFlowchart
   constructor: (@questions) ->
-    @curr = if @questions then @questions[0] else null
-    @curr.$form = $("#question_#{@curr.id}")
-    @curr.$form.addClass "current"
-    @helper()
+    @update_curr(0)
+    @submit()
 
-  helper: ->
-    console.log "I'm a helper!"
+  submit: () ->
+
+  update_curr: (id) ->
+    if @curr and @curr.$div
+      @curr.$div.removeClass 'current'
+      @curr.$div.addClass 'completed'
+
+    @curr = @questions[id]
+    @curr.$div = $("#question_#{@curr.id}")
+    @curr.$form = @curr.$div.find('form')
+
+    @curr.$div.addClass 'current'
+
+    console.log "curr_id = #{@curr.id}"
+    @curr.$form.submit (e) =>
+      e.preventDefault()
+      if ($response = @curr.$form.find(':input[name="response"]').serializeArray()[0])
+        next_id = $response.value
+        @update_curr(next_id)
+        @submit
+      else
+        alert "You must pick one"
+
 
 $ ->
   if gon.action == 'start'
