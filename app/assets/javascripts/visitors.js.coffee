@@ -1,1 +1,2 @@
-console.log gon.action
+if gon.action == 'start'
+  console.log 'hi'
