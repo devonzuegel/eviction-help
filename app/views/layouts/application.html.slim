@@ -5,10 +5,11 @@ html
   
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     title EvictionHelp
-  
+    = include_gon
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', params[:controller], 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = yield(:head)
   
   .borders.horizontal.top
   .borders.vertical.left
