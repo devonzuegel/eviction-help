@@ -11,14 +11,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do |resource|
       
+      puts "\n\n"
+      puts "\nRESOURCE:"
+      pp resource
+      
       if params['user_type'] == "client"
-        client = Client.create()
+        client = Client.create(user_id: resource.id)
+        puts "\nCLIENT:"
+        pp client
       elsif params['user_type'] == "attorney"
-        attorney = Attorney.create()
+        attorney = Attorney.create(user_id: resource.id)
+        puts "\nATTORNEY:"
+        pp attorney
       end
 
-      puts params
       puts "\n\n\n"
+    
     end
   end
 
