@@ -8,4 +8,15 @@ class User < ActiveRecord::Base
   has_many :attorneys, dependent: :destroy
 
   validates :name, :email, presence: true
+
+  def user_type
+    puts self.id
+    if Attorney.find_by(user_id: self.id) != nil
+      "attorney"
+    elsif Client.find_by(user_id: self.id) != nil
+      "client"
+    else
+      nil
+    end
+  end
 end
