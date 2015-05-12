@@ -1,0 +1,13 @@
+- @users.each do |u|
+  ul
+    li= "email = #{u.email}"
+    li= "sign_in_count = #{u.sign_in_count}"
+    li= "name = #{u.name}"
+    li
+      = link_to 'Show ', u
+      = link_to 'Edit ', edit_user_path(u)
+      = link_to 'Destroy ', u, 
+        data: {:confirm => 'Are you sure?'}, 
+        method: :delete
+
+br

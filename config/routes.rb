@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
   get 'start' => 'visitors#start'
   
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
   resources :users
   resources :questions
 end
