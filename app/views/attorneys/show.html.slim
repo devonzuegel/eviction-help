@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Office address:
+  = @attorney.office_address
+p
+  strong Fax number:
+  = @attorney.fax_number
+p
+  strong Bar number:
+  = @attorney.bar_number
+
+= link_to 'Edit', edit_attorney_path(@attorney)
+'|
+= link_to 'Back', attorneys_path

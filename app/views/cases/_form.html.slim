@@ -1,0 +1,15 @@
+= form_for @case do |f|
+  - if @case.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@case.errors.count, "error")} prohibited this case from being saved:"
+      ul
+        - @case.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :case_number
+    = f.text_field :case_number
+  .field
+    = f.label :rent_due
+    = f.number_field :rent_due
+  .actions = f.submit

@@ -1,4 +1,21 @@
 .row
 - for q in @questions
   .question_form id="question_#{q.id}"
-    = render "question_form", q: q
+    h2= q.title
+
+    - if q.description
+      p= q.description
+
+    - if !is_advice(q)
+      =form_tag do
+
+        .response
+          =label_tag         :response,  "#{q.response1}"
+          =radio_button_tag  :response,  q.next1_id
+
+        .response
+          =label_tag         :response,  "#{q.response2}"
+          =radio_button_tag  :response,  q.next2_id
+
+        =submit_tag 'Previous', value: 'prev'
+        =submit_tag 'Next',     value: 'next'

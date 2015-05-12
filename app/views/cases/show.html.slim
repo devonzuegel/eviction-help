@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Case number:
+  = @case.case_number
+p
+  strong Rent due:
+  = @case.rent_due
+
+= link_to 'Edit', edit_case_path(@case)
+'|
+= link_to 'Back', cases_path

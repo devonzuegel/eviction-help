@@ -1,0 +1,23 @@
+h1 Listing cases
+
+table
+  thead
+    tr
+      th Case number
+      th Rent due
+      th
+      th
+      th
+
+  tbody
+    - @cases.each do |case|
+      tr
+        td = case.case_number
+        td = case.rent_due
+        td = link_to 'Show', case
+        td = link_to 'Edit', edit_case_path(case)
+        td = link_to 'Destroy', case, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Case', new_case_path

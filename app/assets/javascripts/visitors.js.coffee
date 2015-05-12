@@ -5,7 +5,6 @@ class QuestionFlowchart
   update_curr: (id) ->
     if @curr and @curr.$div
       @curr.$div.removeClass 'current'
-      @curr.$div.addClass 'completed'
 
     @curr = @questions[id - 1]  # Adjust for 0-indexing
     @curr.$div = $("#question_#{@curr.id}")
@@ -15,6 +14,7 @@ class QuestionFlowchart
 
     @curr.$form.submit (e) =>
       e.preventDefault()
+      console.log $(document.activeElement).val()
       if ($response = @curr.$form.find(':input[name="response"]').serializeArray()[0])
         next_id = $response.value
         console.log "curr_id = #{@curr.id} \nnext_id = #{next_id}"

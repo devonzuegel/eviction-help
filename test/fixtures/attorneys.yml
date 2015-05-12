@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  office_address: MyString
+  fax_number: MyString
+  bar_number: MyString
+
+two:
+  office_address: MyString
+  fax_number: MyString
+  bar_number: MyString
