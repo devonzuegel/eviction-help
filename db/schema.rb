@@ -14,12 +14,15 @@
 ActiveRecord::Schema.define(version: 20150512010627) do
 
   create_table "attorneys", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "office_address"
     t.string   "fax_number"
     t.string   "bar_number"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
+
+  add_index "attorneys", ["user_id"], name: "index_attorneys_on_user_id"
 
   create_table "cases", force: :cascade do |t|
     t.string   "case_number"

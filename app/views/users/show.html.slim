@@ -1,9 +1,9 @@
 h3 User
-p
-  | Name: #{@user.name if @user.name}
-p
-  | Email: #{@user.email if @user.email}
 
-.row
-  .col-xs-6 lkdajsflkasdjf
-  .col-xs-6 salfjasdklfj
+table
+  tr
+    th Name
+    th Email
+  tr
+    td #{@user.name if @user.name}
+    td #{@user.email if @user.email}

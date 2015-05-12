@@ -1,13 +1,26 @@
-- @users.each do |u|
-  ul
-    li= "email = #{u.email}"
-    li= "sign_in_count = #{u.sign_in_count}"
-    li= "name = #{u.name}"
-    li
-      = link_to 'Show ', u
-      = link_to 'Edit ', edit_user_path(u)
-      = link_to 'Destroy ', u, 
-        data: {:confirm => 'Are you sure?'}, 
-        method: :delete
+table
+
+  tr
+    th User ID
+    th Email
+    th Sign in count
+    th Name
+
+    th
+    th
+    th
+
+  - @users.each do |u|
+    tr
+      td= u.id
+      td= u.email
+      td= u.sign_in_count
+      td= u.name
+
+      td= link_to 'Show ', u
+      td= link_to 'Edit ', edit_user_path(u)
+      td= link_to 'Destroy ', u, 
+          data: {:confirm => 'Are you sure?'}, 
+          method: :delete
 
 br
