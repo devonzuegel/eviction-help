@@ -1,8 +1,9 @@
-h2
-  | Edit 
-  = resource_name.to_s.humanize
+h2 Edit #{resource_name.to_s.humanize}
+
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
+
+  = render '/devise/shared/error_messages'
+
   table
     tr
       td= f.label :email
@@ -20,11 +21,8 @@ h2
     tr
       td= f.label :current_password
       td= f.password_field :current_password, autocomplete: "off"
-  .actions
-    td= f.submit "Update"
-h3
-  | Cancel my account
-p
-  | Unhappy? 
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+  p= f.submit "Update"
+
+p= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+
 = link_to "Back", :back

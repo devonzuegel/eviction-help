@@ -17,5 +17,7 @@ html
   .borders.horizontal.bottom
   
   body: .body
+    = render 'shared/flash_messages' if !flash.empty?
+
     = render './layouts/nav'
     = yield

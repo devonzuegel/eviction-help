@@ -8,7 +8,6 @@ table
 
     th
     th
-    th
 
   - @users.each do |u|
     tr
@@ -18,9 +17,6 @@ table
       td= u.user_type
 
       td= link_to 'Show ', u
-      td= link_to 'Edit ', edit_user_path(u)
-      td= link_to 'Destroy ', u, 
-          data: {:confirm => 'Are you sure?'}, 
-          method: :delete
+      td= link_to 'Destroy ', u, method: :delete, data: { :confirm => 'Are you sure?' }
 
 br

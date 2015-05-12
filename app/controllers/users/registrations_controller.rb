@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       elsif params['user_type'] == "attorney"
         attorney = Attorney.create(user_id: resource.id)
       end
-
+      
     end
   end
 
