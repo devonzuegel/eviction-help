@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :clients,   dependent: :destroy
   has_many :attorneys, dependent: :destroy
+
+  validates :name, :email, presence: true
 end

@@ -2,6 +2,7 @@ table
 
   tr
     th User ID
+    th Name
     th Email
     th Sign in count
     th Name
@@ -13,6 +14,7 @@ table
   - @users.each do |u|
     tr
       td= u.id
+      td= u.name
       td= u.email
       td= u.sign_in_count
       td= u.name

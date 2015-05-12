@@ -4,41 +4,31 @@ h2 Sign up
   
   = devise_error_messages!
   
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
+  table
+    tr
+      td= f.label :name
+      td= f.text_field :name, autofocus: true
 
-    ul
-      li= controller.controller_name
-      li= controller.action_name
-      li= @test
+    tr
+      td= f.label :email
+      td= f.email_field :email
 
-  .field
-    = f.label :password
-    - if @validatable
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    br
-    = f.password_field :password, autocomplete: "off"
+    tr
+      td= f.label :password, "Password (#{@minimum_password_length} characters minimum)"
+      td= f.password_field :password, autocomplete: "off"
   
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  
-  .field
-    = label_tag :user_type
-    ul
-      = radio_button_tag :user_type, 'client', checked: true
-      |  Client
-    ul
-      = radio_button_tag :user_type, 'attorney'
-      |  Attorney
+    tr
+      td= f.label :password_confirmation
+      td= f.password_field :password_confirmation, autocomplete: "off"
+    
+    tr
+      td= label_tag :user_type, "I am a..."
+      td
+        = radio_button_tag :user_type, 'client', checked: true
+        |  Client 
+        = radio_button_tag :user_type, 'attorney'
+        |  Attorney
 
-  .actions
-    = f.submit "Sign up"
+  p= f.submit "Sign up"
 
 = render "devise/shared/links"
