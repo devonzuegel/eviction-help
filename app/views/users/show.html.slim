@@ -1,9 +1,40 @@
-h3 User
+h1 Your information
 
 table
   tr
-    th Name
-    th Email
+    td Name
+    td= @user.name
+
   tr
-    td #{@user.name if @user.name}
-    td #{@user.email if @user.email}
+    td Email
+    td= @user.email
+  
+  - if @user.client
+    tr
+      td Telephone
+      td= @user.client.telephone
+    tr
+      td Street Address
+      td= @user.client.street_address
+    tr
+      td Mailing Address
+      td= @user.client.mailing_address
+    tr
+      td Landlord
+      td= @user.client.landlord
+    tr
+      td Other People
+      td= @user.client.other_people
+
+  - elsif @user.attorney
+    tr
+      td Office Address
+      td= @user.attorney.office_address
+    tr
+      td Fax Number
+      td= @user.attorney.fax_number
+    tr
+      td Bar Number
+      td= @user.attorney.bar_number
+
+td= link_to 'Edit', edit_registration_path(@user)

@@ -88,7 +88,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                     ], attorney_attributes: [
                                         :office_address, :fax_number,
                                         :bar_number
-                                    ]
-                                    )
+                                    ])
     end
 end
