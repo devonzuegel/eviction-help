@@ -68,22 +68,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # The path used after sign up.
     def after_sign_up_path_for(resource)
-      id = client_or_attorney_from_user(resource).id
-      if params['user_type'] == "client"
-        edit_client_path(id)
-      elsif params['user_type'] == "attorney"
-        edit_attorney_path(id)
-      end
+      edit_registration_path(resource)
     end
 
   private
 
     def sign_up_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit( :name, :email, :password,  
+                                    :password_confirmation )
     end
 
     def account_update_params
-      params.require(:user).permit( :name, :email, :password, :password_confirmation, :current_password,
-                                    client_attributes: [:telephone, :street_address, :mailing_address, :landlord, :other_people] )
+      params.require(:user).permit( :name, :email, :password, 
+                                    :password_confirmation, :current_password,
+                                    client_attributes: [ 
+                                        :telephone, :street_address,
+                                        :mailing_address, :landlord,
+                                        :other_people
+                                    ]
+                                    # , attorney_attributes: [
+                                    #     :office_address, :fax_number,
+                                    #     :bar_number
+                                    # ]
+                                    )
     end
 end

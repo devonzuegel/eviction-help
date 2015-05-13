@@ -43,7 +43,7 @@ class AttorneysController < ApplicationController
   # PATCH/PUT /attorneys/1.json
   def update
     respond_to do |format|
-      if @attorney.update(attorney_params)
+      if @attorney.update_attributes(attorney_params)
         format.html { redirect_to @attorney, notice: 'Attorney was successfully updated.' }
         format.json { render :show, status: :ok, location: @attorney }
       else

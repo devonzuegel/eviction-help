@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_one :client,   dependent: :destroy
   accepts_nested_attributes_for :client
+  
   has_one :attorney, dependent: :destroy
   accepts_nested_attributes_for :attorney
 
