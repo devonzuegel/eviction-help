@@ -4,8 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, 
          :rememberable, :trackable, :validatable
 
-  has_many :clients,   dependent: :destroy
-  has_many :attorneys, dependent: :destroy
+  has_one :client,   dependent: :destroy
+  accepts_nested_attributes_for :client
+  has_one :attorney, dependent: :destroy
+  accepts_nested_attributes_for :attorney
 
   validates :name, :email, presence: true
 

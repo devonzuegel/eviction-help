@@ -41,13 +41,8 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
-
-    puts "\n\n\n\n===============\n"
-    pp params[:client][:user]
-    puts "===============\n\n\n\n"
-
     respond_to do |format|
-      if @client.update(client_params) and current_user.update(params[:client][:user])
+      if @client.update_attributes(client_params)
         format.html { redirect_to @client, notice: 'Your profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @client }
       else
@@ -84,7 +79,7 @@ class ClientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
       params.require(:client).permit( :telephone, :street_address, :mailing_address, 
-                                      :landlord, :other_people )
+                                      :landlord, :other_people, user_attributes: [:name, :email] )
     end
 
 end

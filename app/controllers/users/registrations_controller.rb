@@ -44,32 +44,37 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
-  # You can put the params you want to permit in the empty array.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+    # You can put the params you want to permit in the empty array.
+    # def configure_sign_up_params
+    #   devise_parameter_sanitizer.for(:sign_up) << :attribute
+    # end
 
-  # You can put the params you want to permit in the empty array.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+    # You can put the params you want to permit in the empty array.
+    # def configure_account_update_params
+    #   devise_parameter_sanitizer.for(:account_update) << :attribute
+    # end
 
-  # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    id = client_or_attorney_from_user(resource).id
-    if params['user_type'] == "client"
-      edit_client_path(id)
-    elsif params['user_type'] == "attorney"
-      edit_attorney_path(id)
+    # The path used after sign up for inactive accounts.
+    # def after_inactive_sign_up_path_for(resource)
+    #   super(resource)
+    # end
+
+    def update_resource(resource, params)
+      resource.update_without_password(params)
     end
-  end
 
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+
+    # The path used after sign up.
+    def after_sign_up_path_for(resource)
+      id = client_or_attorney_from_user(resource).id
+      if params['user_type'] == "client"
+        edit_client_path(id)
+      elsif params['user_type'] == "attorney"
+        edit_attorney_path(id)
+      end
+    end
 
   private
 
@@ -78,6 +83,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def account_update_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password)
+      params.require(:user).permit( :name, :email, :password, :password_confirmation, :current_password,
+                                    client_attributes: [:telephone, :street_address, :mailing_address, :landlord, :other_people] )
     end
 end

@@ -11,6 +11,7 @@ gem 'turbolinks',       '2.5.3'
 gem 'jbuilder',         '~> 2.0'
 gem 'gon',              '5.2.3'
 gem 'wicked',           '1.1.1'
+gem 'best_in_place',    '~> 3.0.1'
 
 group :development, :test do
   gem 'byebug'

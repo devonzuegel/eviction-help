@@ -1,5 +1,6 @@
 class Client < ActiveRecord::Base
   belongs_to :user
+  accepts_nested_attributes_for :user
 
   validates :telephone, numericality: true, length: { 
     is: 10,

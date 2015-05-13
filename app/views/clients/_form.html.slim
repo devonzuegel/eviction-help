@@ -4,17 +4,21 @@
       h4 Please fix the following errors:
       ul
         - @client.errors.each do |field, message|
-          li= message
+          li
+            b= field
+            = message
 
   table
-    = c.fields_for @client.user do |u|
-      tr
-        td= u.label :name
-        td= u.text_field :name
-      tr
-        td= u.label :email
-        td= u.text_field :email
 
+    = c.fields_for :user do |u|
+
+        tr
+          td= u.label :name
+          td= u.text_field :name
+        tr
+          td= u.label :email
+          td= u.email_field :email, autofocus: true
+      
     tr
       td= c.label :telephone
       td= c.text_field :telephone

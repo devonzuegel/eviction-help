@@ -3,27 +3,34 @@ h1 Your information
 table
   tr
     td Name
-    td= @client.user.name
+    td= best_in_place @client.user, :name,
+        ok_button: 'Save', cancel_button: 'Cancel'
   tr
     td Email
-    td= @client.user.email
+    td= best_in_place @client.user, :email,
+        ok_button: 'Save', cancel_button: 'Cancel'
   tr
     td Telephone
-    td= number_to_phone(@client.telephone, area_code: true)
+    td= best_in_place @client, :telephone, display_with: lambda { |t| number_to_phone(t, area_code: true) },
+        ok_button: 'Save', cancel_button: 'Cancel'
   tr
     td Street address
-    td= @client.street_address
+    td= best_in_place @client, :street_address,
+        ok_button: 'Save', cancel_button: 'Cancel'
   tr
     td Mailing address
-    td= @client.mailing_address
+    td= best_in_place @client, :mailing_address,
+        ok_button: 'Save', cancel_button: 'Cancel'
   tr
     td Landlord
-    td= @client.landlord
+    td= best_in_place @client, :landlord,
+        ok_button: 'Save', cancel_button: 'Cancel'
   tr
     td Other people who live on the property
-    td= @client.other_people
+    td= best_in_place @client, :other_people, type: :textarea,
+        ok_button: 'Save', cancel_button: 'Cancel'
 
 
-td= link_to 'Edit', edit_client_path(@client)
+td= link_to 'Edit', edit_registration_path(@client.user)
 td |
 td= link_to 'Back', clients_path

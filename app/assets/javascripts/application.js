@@ -13,7 +13,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require best_in_place
+//= require best_in_place.jquery-ui
 //= require turbolinks
 //= require_tree ./application/
 //
@@ -21,3 +22,8 @@
 // controller-specific .js.coffee files. It has been replaced
 // with "require_tree ./application/". This folder contains
 // all .js files general to the entire site.
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
