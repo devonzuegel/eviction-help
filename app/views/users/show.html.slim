@@ -1,40 +1,21 @@
 h1 Your information
 
 table
-  tr
-    td Name
-    td= @user.name
-
-  tr
-    td Email
-    td= @user.email
+  - for field in ['name', 'email']
+    tr
+      td= field.humanize
+      td= @user[field]
   
   - if @user.client
-    tr
-      td Telephone
-      td= @user.client.telephone
-    tr
-      td Street Address
-      td= @user.client.street_address
-    tr
-      td Mailing Address
-      td= @user.client.mailing_address
-    tr
-      td Landlord
-      td= @user.client.landlord
-    tr
-      td Other People
-      td= @user.client.other_people
+    - for field in ['telephone', 'street_address', 'mailing_address', 'landlord', 'other_people']
+      tr
+        td= field.humanize
+        td= @user.client[field]
 
   - elsif @user.attorney
-    tr
-      td Office Address
-      td= @user.attorney.office_address
-    tr
-      td Fax Number
-      td= @user.attorney.fax_number
-    tr
-      td Bar Number
-      td= @user.attorney.bar_number
+    - for field in ['office_address', 'fax_number', 'bar_number']
+      tr
+        td= field.humanize
+        td= @user.attorney[field]
 
 td= link_to 'Edit', edit_registration_path(@user)
