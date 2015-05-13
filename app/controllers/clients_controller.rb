@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_client
+  before_action :correct_client, only: [:show, :edit, :destroy]
 
   # GET /clients
   # GET /clients.json
@@ -10,10 +11,6 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
-    if @client != client_from_user(current_user)
-      flash[:error] = "Access denied."
-      redirect_to :back
-    end
   end
 
   # GET /clients/new
@@ -68,7 +65,15 @@ class ClientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
-      @client = Client.find(params[:id])
+      @client = Client.find(params[:id]) unless params[:id] == nil
+    end
+
+    # Confirms the correct user.
+    def correct_client
+      if @client != client_from_user(current_user)
+        flash[:error] = "Access denied."
+        redirect_to :back
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

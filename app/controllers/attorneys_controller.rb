@@ -1,5 +1,7 @@
 class AttorneysController < ApplicationController
-  before_action :set_attorney, only: [:show, :edit, :update, :destroy]
+  before_action :set_attorney
+  before_action :correct_attorney, only: [:show, :edit, :destroy]
+
 
   # GET /attorneys
   # GET /attorneys.json
@@ -68,7 +70,15 @@ class AttorneysController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attorney
-      @attorney = Attorney.find(params[:id])
+      @attorney = Attorney.find(params[:id]) unless params[:id] == nil
+    end
+
+    # Confirms the correct user.
+    def correct_attorney
+      if @attorney != attorney_from_user(current_user)
+        flash[:error] = "Access denied."
+        redirect_to :back
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
