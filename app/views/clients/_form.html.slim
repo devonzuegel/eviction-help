@@ -1,4 +1,4 @@
-= form_for @client do |f|
+= form_for @client do |c|
   - if @client.errors.any?
     .alert.alert-danger
       h4 Please fix the following errors:
@@ -7,21 +7,29 @@
           li= message
 
   table
+    = c.fields_for @client.user do |u|
+      tr
+        td= u.label :name
+        td= u.text_field :name
+      tr
+        td= u.label :email
+        td= u.text_field :email
+
     tr
-      td= f.label :telephone
-      td= f.text_field :telephone
+      td= c.label :telephone
+      td= c.text_field :telephone
     tr
-      td= f.label :street_address
-      td= f.text_field :street_address
+      td= c.label :street_address
+      td= c.text_field :street_address
     tr
-      td= f.label :mailing_address
-      td= f.text_field :mailing_address
+      td= c.label :mailing_address
+      td= c.text_field :mailing_address
     tr
-      td= f.label :landlord, "Landlord's name"
-      td= f.text_field :landlord
+      td= c.label :landlord, "Landlord's name"
+      td= c.text_field :landlord
     tr
-      td= f.label :other_people, "Other people who live on the property"
-      td= f.text_area :other_people
+      td= c.label :other_people, "Other people who live on the property"
+      td= c.text_area :other_people
 
 
-  .actions = f.submit
+  .actions = c.submit

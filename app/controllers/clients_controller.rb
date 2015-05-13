@@ -41,9 +41,14 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
+
+    puts "\n\n\n\n===============\n"
+    pp params[:client][:user]
+    puts "===============\n\n\n\n"
+
     respond_to do |format|
-      if @client.update(client_params)
-        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
+      if @client.update(client_params) and current_user.update(params[:client][:user])
+        format.html { redirect_to @client, notice: 'Your profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @client }
       else
         format.html { render :edit }

@@ -2,6 +2,12 @@ h1 Your information
 
 table
   tr
+    td Name
+    td= @client.user.name
+  tr
+    td Email
+    td= @client.user.email
+  tr
     td Telephone
     td= number_to_phone(@client.telephone, area_code: true)
   tr
