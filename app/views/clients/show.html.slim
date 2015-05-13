@@ -1,8 +1,22 @@
-p#notice = notice
+h1 Your information
 
-p
-  strong User:
-  = @client.user_id
+table
+  tr
+    td Telephone
+    td= number_to_phone(@client.telephone, area_code: true)
+  tr
+    td Street address
+    td= @client.street_address
+  tr
+    td Mailing address
+    td= @client.mailing_address
+  tr
+    td Landlord
+    td= @client.landlord
+  tr
+    td Other people who live on the property
+    td= @client.other_people
+
 
 td= link_to 'Edit', edit_client_path(@client)
 td |
