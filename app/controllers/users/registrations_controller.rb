@@ -9,14 +9,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+
     super do |resource|
       if params['user_type'] == "client"
         client = Client.create(user_id: resource.id)
       elsif params['user_type'] == "attorney"
         attorney = Attorney.create(user_id: resource.id)
-      end
-      
+      end      
     end
+
   end
 
   # GET /resource/edit
@@ -56,9 +57,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    id = client_or_attorney_from_user(resource).id
+    if params['user_type'] == "client"
+      edit_client_path(id)
+    elsif params['user_type'] == "attorney"
+      edit_attorney_path(id)
+    end
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

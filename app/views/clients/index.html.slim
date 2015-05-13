@@ -7,7 +7,6 @@ table
       th User
       th
       th
-      th
 
   tbody
     - @clients.each do |client|
@@ -16,7 +15,6 @@ table
         td = link_to "#{client.user.email if client.user}", client.user
         td = link_to 'Show', client
         td = link_to 'Edit', edit_client_path(client)
-        td = link_to 'Destroy', client, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

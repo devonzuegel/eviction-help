@@ -3,22 +3,22 @@ h1 Listing attorneys
 table
   thead
     tr
+      th Email
       th Office address
       th Fax number
       th Bar number
-      th
       th
       th
 
   tbody
     - @attorneys.each do |attorney|
       tr
+        td = attorney.user.email
         td = attorney.office_address
         td = attorney.fax_number
         td = attorney.bar_number
         td = link_to 'Show', attorney
         td = link_to 'Edit', edit_attorney_path(attorney)
-        td = link_to 'Destroy', attorney, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

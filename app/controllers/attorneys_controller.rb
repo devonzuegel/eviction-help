@@ -10,6 +10,10 @@ class AttorneysController < ApplicationController
   # GET /attorneys/1
   # GET /attorneys/1.json
   def show
+    if @attorney != attorney_from_user(current_user)
+      flash[:error] = "Access denied."
+      redirect_to :back
+    end
   end
 
   # GET /attorneys/new
