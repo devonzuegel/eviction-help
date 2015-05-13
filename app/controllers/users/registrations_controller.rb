@@ -85,11 +85,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                         :telephone, :street_address,
                                         :mailing_address, :landlord,
                                         :other_people
+                                    ], attorney_attributes: [
+                                        :office_address, :fax_number,
+                                        :bar_number
                                     ]
-                                    # , attorney_attributes: [
-                                    #     :office_address, :fax_number,
-                                    #     :bar_number
-                                    # ]
                                     )
     end
 end

@@ -1,3 +1,4 @@
 class Attorney < ActiveRecord::Base
-  belongs_to :user, dependent: :delete
+  belongs_to :user
+  accepts_nested_attributes_for :user
 end
