@@ -72,7 +72,7 @@ class ClientsController < ApplicationController
     def correct_client
       if @client != client_from_user(current_user)
         flash[:error] = "Access denied."
-        redirect_to :back
+        go_back
       end
     end
 

@@ -1,5 +1,6 @@
 class DefensesController < ApplicationController
   before_action :set_defense, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin
 
   # GET /defenses
   # GET /defenses.json

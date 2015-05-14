@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     unless privileged
       flash[:error] = "Access denied."
-      redirect_to :back
+      go_back
     end
   end
 
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       end
     else
       flash[:error] = "Access denied."
-      redirect_to :back
+      go_back
     end
   end
 

@@ -73,7 +73,7 @@ class AttorneysController < ApplicationController
     def correct_attorney
       if @attorney != attorney_from_user(current_user)
         flash[:error] = "Access denied."
-        redirect_to :back
+        go_back
       end
     end
 
