@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Description:
+  = @defense.description
+
+= link_to 'Edit', edit_defense_path(@defense)
+'|
+= link_to 'Back', defenses_path

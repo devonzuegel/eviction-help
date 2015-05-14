@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513003848) do
+ActiveRecord::Schema.define(version: 20150514214928) do
 
   create_table "attorneys", force: :cascade do |t|
     t.integer  "user_id"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20150513003848) do
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
 
+  create_table "defenses", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
@@ -56,14 +62,6 @@ ActiveRecord::Schema.define(version: 20150513003848) do
     t.integer  "next2_id"
     t.text     "response1"
     t.text     "response2"
-  end
-
-  create_table "tenants", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.integer  "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150513003848) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.boolean  "god_mode"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

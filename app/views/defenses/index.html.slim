@@ -1,0 +1,21 @@
+h1 Listing defenses
+
+table
+  thead
+    tr
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @defenses.each do |defense|
+      tr
+        td = defense.description
+        td = link_to 'Show', defense
+        td = link_to 'Edit', edit_defense_path(defense)
+        td = link_to 'Destroy', defense, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Defense', new_defense_path

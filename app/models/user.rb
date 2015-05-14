@@ -13,6 +13,11 @@ class User < ActiveRecord::Base
   validates :name, :email, presence: true
 
 
+  def init
+    self.god_mode ||= false
+  end
+
+
   def user_type
     if Attorney.find_by(user_id: self.id) != nil
       "attorney"
