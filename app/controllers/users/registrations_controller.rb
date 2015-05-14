@@ -83,15 +83,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     def account_update_params
-      params.require(:user).permit( :name, :email, :password, 
-                                    :password_confirmation, :current_password,
-                                    client_attributes: [ 
-                                        :telephone, :street_address,
-                                        :mailing_address, :landlord,
-                                        :other_people
-                                    ], attorney_attributes: [
-                                        :office_address, :fax_number,
-                                        :bar_number
-                                    ])
+      params.require(:user)
+            .permit( :name, :email, :password, 
+                     :password_confirmation, :current_password,
+                     client_attributes: [ 
+                         :telephone, :street_address,
+                         :mailing_address, :landlord,
+                         :other_people
+                     ], attorney_attributes: [
+                         :office_address, :fax_number,
+                         :bar_number
+                     ])
     end
 end
