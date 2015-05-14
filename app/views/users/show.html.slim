@@ -10,7 +10,7 @@ table
     - for field in ['telephone', 'street_address', 'mailing_address', 'landlord', 'other_people']
       tr
         td= field.humanize
-        td= @user.client[field]
+        td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
 
   - elsif @user.attorney
     - for field in ['office_address', 'fax_number', 'bar_number']
