@@ -15,4 +15,8 @@ module ApplicationHelper
     Attorney.find_by(user_id: user.id)
   end
 
+  def privileged
+    @user == current_user or current_user.god_mode
+  end
+
 end

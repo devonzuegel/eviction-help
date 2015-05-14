@@ -12,9 +12,10 @@ class User < ActiveRecord::Base
 
   validates :name, :email, presence: true
 
+  # before_save :set_defaults
 
   def init
-    self.god_mode ||= false
+    self.god_mode |= false
   end
 
 
