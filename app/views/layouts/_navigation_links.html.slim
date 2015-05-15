@@ -1,9 +1,11 @@
 - if user_signed_in?
-  td= link_to 'All Users', users_path
-  td= link_to 'Clients', clients_path
-  td= link_to 'Attorneys', attorneys_path
   td= link_to 'Profile', current_user
   td= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
+  - if current_user.god_mode
+    td= link_to 'All Users', users_path
+    td= link_to 'Clients', clients_path
+    td= link_to 'Attorneys', attorneys_path
+    td= link_to 'Defenses', defenses_path
 - else
   td= link_to 'Sign in', new_user_session_path
   td= link_to 'Sign up', new_user_registration_path
