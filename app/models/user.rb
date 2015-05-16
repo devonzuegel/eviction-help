@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_one :attorney, dependent: :destroy
   accepts_nested_attributes_for :attorney
 
+  has_and_belongs_to_many :defenses
+
   validates :name, :email, presence: true
 
   # before_save :set_defaults
