@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :attorney
 
   has_and_belongs_to_many :defenses
+  accepts_nested_attributes_for :defenses
 
   validates :name, :email, presence: true
 

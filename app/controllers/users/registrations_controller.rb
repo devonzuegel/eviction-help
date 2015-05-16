@@ -21,14 +21,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @all_defenses = Defense.all
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+
+    super do |resource|
+      puts "\n\n\n\n\n====================\n"
+      pp params
+      puts "\n====================\n\n\n\n\n"
+    end
+
+  end
 
   # DELETE /resource
   # def destroy
@@ -93,6 +100,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
                      ], attorney_attributes: [
                          :office_address, :fax_number,
                          :bar_number
-                     ])
+                     ],
+                     # defenses_attributes: [:description, :id]
+                     )
     end
 end

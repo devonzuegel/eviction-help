@@ -1,7 +1,5 @@
 h1 Your information
 
-h2= @user.defenses
-
 table
   - for field in ['name', 'email']
     tr
@@ -13,6 +11,13 @@ table
       tr
         td= field.humanize
         td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
+
+    tr
+      td Your defenses:
+      td
+        ul
+        - @user.defenses.each do |d|
+          li= d
 
   - elsif @user.attorney
     - for field in ['office_address', 'fax_number', 'bar_number']

@@ -36,6 +36,14 @@ h2 Edit #{resource_name.to_s.humanize}
           td= c.label :other_people, "Other people who live on the property"
           td= c.text_area :other_people
 
+      tr
+        td Your defenses
+        td: ul
+          = f.fields_for :defenses, @all_defenses do |d|
+            li
+              = d.check_box :id, value: d.object.id
+              = " #{d.object.description}"
+
     - elsif resource.attorney
       = f.fields_for :attorney do |a|
 
