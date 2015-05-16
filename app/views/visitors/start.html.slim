@@ -20,5 +20,5 @@
           =radio_button_tag  :response,  q.next2_id
 
         - if !q.prev_id.blank?
-          =submit_tag 'Previous', value: 'prev'
-        =submit_tag 'Next',     value: 'next'
+          =submit_tag 'Previous', value: 'Previous', name: 'prev'
+        =submit_tag 'Next',     value: 'Next', name: 'next'

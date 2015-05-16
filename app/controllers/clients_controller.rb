@@ -1,6 +1,8 @@
 class ClientsController < ApplicationController
   before_action :set_client
-  before_action :correct_client, only: [:show, :edit, :destroy]
+  before_filter :authenticate_admin, only: [:index]
+  before_filter :privileged, only: [:show, :destroy]
+
 
   # GET /clients
   # GET /clients.json
@@ -8,19 +10,23 @@ class ClientsController < ApplicationController
     @clients = Client.all
   end
 
+
   # GET /clients/1
   # GET /clients/1.json
   def show
   end
+
 
   # GET /clients/new
   def new
     @client = Client.new
   end
 
+
   # GET /clients/1/edit
   def edit
   end
+
 
   # POST /clients
   # POST /clients.json
@@ -38,6 +44,7 @@ class ClientsController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
@@ -52,6 +59,7 @@ class ClientsController < ApplicationController
     end
   end
 
+
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
@@ -62,19 +70,13 @@ class ClientsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
       @client = Client.find(params[:id]) unless params[:id] == nil
     end
 
-    # Confirms the correct user.
-    def correct_client
-      if @client != client_from_user(current_user)
-        flash[:error] = "Access denied."
-        go_back
-      end
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params

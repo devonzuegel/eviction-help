@@ -101,7 +101,7 @@ Question.create!([
     response1: "Yes",
     response2: "No" },
   { title: "Good news!",
-    description: "We can help you file your answer to the lawsuit.",
+    description: "We can help you file your answer to the lawsuit. Sign up now to get started.",
     required: true,
     kind: "advice",
     prev_id: nil,

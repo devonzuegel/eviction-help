@@ -1,6 +1,8 @@
 class AttorneysController < ApplicationController
   before_action :set_attorney
   before_action :correct_attorney, only: [:show, :edit, :destroy]
+  before_filter :authenticate_admin, only: [:index]
+  before_filter :privileged, only: [:show, :destroy]
 
 
   # GET /attorneys
