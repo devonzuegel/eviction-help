@@ -7,10 +7,10 @@ table
       td= @user[field]
   
   - if @user.client
-    - for field in ['telephone', 'street_address', 'mailing_address', 'landlord', 'other_people']
+    - for field in @client_fields
       tr
-        td= field.humanize
-        td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
+          td= field.humanize
+          td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
 
     tr
       td Your defenses:

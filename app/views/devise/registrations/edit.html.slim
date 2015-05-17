@@ -19,23 +19,11 @@ h2 Edit #{resource_name.to_s.humanize}
 
     - if resource.client
       = f.fields_for :client do |c|
-
-        tr
-          td= c.label :telephone
-          td= c.text_field :telephone
-        tr
-          td= c.label :street_address
-          td= c.text_field :street_address
-        tr
-          td= c.label :mailing_address
-          td= c.text_field :mailing_address
-        tr
-          td= c.label :landlord, "Landlord's name"
-          td= c.text_field :landlord
-        tr
-          td= c.label :other_people, "Other people who live on the property"
-          td= c.text_area :other_people
-
+        - @client_fields.each do |field, hash|
+          tr
+            td= c.label field, value: hash[:name] || field.humanize
+            = render 'shared/forms/variable_input_type', type: hash[:type],
+                                        form_builder: c, field_name: field
       tr
         td Your defenses
         td: ul
