@@ -109,7 +109,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
                      client_attributes: [ 
                          :telephone, :street_address,
                          :mailing_address, :landlord,
-                         :other_people
+                         :other_people, :other_problems, 
+                         :asked_for_repairs, :repairs_made, 
+                         :further_information, :offered_rent_before_deadline, 
+                         :offered_rent_date, :offered_rent_amount, 
+                         :offered_rent_method
                      ], attorney_attributes: [
                          :office_address, :fax_number,
                          :bar_number
