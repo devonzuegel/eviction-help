@@ -1,0 +1,116 @@
+---
+- :title: Has your landlord given you a 60-day notice terminating your tenancy?
+  :description: ''
+  :required: true
+  :kind: question
+  :prev_id: 
+  :next1_id: 5
+  :next2_id: 2
+  :response1: 'Yes'
+  :response2: 'No'
+- :title: Has your landlord served you a 3-day notice to cure or quit?
+  :description: ''
+  :required: true
+  :kind: question
+  :prev_id: 1
+  :next1_id: 3
+  :next2_id: 4
+  :response1: 'Yes'
+  :response2: 'No'
+- :title: Have more than 3 days passed since your landlord served you the notice?
+  :description: ''
+  :required: true
+  :kind: question
+  :prev_id: 2
+  :next1_id: 5
+  :next2_id: 4
+  :response1: 'Yes'
+  :response2: 'No'
+- :title: Good news!
+  :description: Since fewer than 3 days have passed since your landlord served you
+    the notice, you still have a chance to resolve this dispute outside of the courts.
+    {more info...}
+  :required: true
+  :kind: advice
+  :prev_id: 
+  :next1_id: 
+  :next2_id: 
+  :response1: 
+  :response2: 
+- :title: Has your landlord filed an Unlawful Detainer lawsuit at the Court?
+  :description: ''
+  :required: true
+  :kind: question
+  :prev_id: 3
+  :next1_id: 6
+  :next2_id: 9
+  :response1: 'Yes'
+  :response2: 'No'
+- :title: Did (s)he file the lawsuit within the past 5 days?
+  :description: ''
+  :required: true
+  :kind: question
+  :prev_id: 5
+  :next1_id: 8
+  :next2_id: 7
+  :response1: 'Yes'
+  :response2: 'No'
+- :title: Default Judgement
+  :description: Unfortunately, tenants automatically lose Unlawful Detainer lawsuits
+    if they don't respond within 5 days. You should expect a Sheriff's Notice within
+    the next 1-5 days, and if you do not move within 6-8 days the Sheriff will evict
+    you in person.
+  :required: true
+  :kind: advice
+  :prev_id: 6
+  :next1_id: 
+  :next2_id: 
+  :response1: 
+  :response2: 
+- :title: Have you filed an answer to the lawsuit?
+  :description: ''
+  :required: true
+  :kind: question
+  :prev_id: 6
+  :next1_id: 9
+  :next2_id: 10
+  :response1: 'Yes'
+  :response2: 'No'
+- :title: Here is information about further legal resources.
+  :description: 
+  :required: true
+  :kind: advice
+  :prev_id: 
+  :next1_id: 
+  :next2_id: 
+  :response1: 
+  :response2: 
+- :title: Do you live in San Mateo County?
+  :description: ''
+  :required: true
+  :kind: question
+  :prev_id: 8
+  :next1_id: 11
+  :next2_id: 12
+  :response1: 'Yes'
+  :response2: 'No'
+- :title: Good news!
+  :description: We can help you file your answer to the lawsuit. Sign up now to get
+    started.
+  :required: true
+  :kind: advice
+  :prev_id: 
+  :next1_id: 
+  :next2_id: 
+  :response1: 
+  :response2: 
+- :title: We don't serve your county quite yet, but here is information about further
+    legal resources.
+  :description: 
+  :required: true
+  :kind: advice
+  :prev_id: 
+  :next1_id: 
+  :next2_id: 
+  :response1: 
+  :response2: 
