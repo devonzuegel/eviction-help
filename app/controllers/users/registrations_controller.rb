@@ -30,7 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
 
     super do |resource|
-      defense_ids = params.fetch :defense_ids
+      defense_ids = params.fetch(:user).fetch(:defense_ids, [])
       resource.defenses = Defense.where(id: defense_ids)
     end
 

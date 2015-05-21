@@ -16,8 +16,8 @@ table
       td Your defenses:
       td
         ul
-        - @user.defenses.each do |d|
-          li= d.description
+         - @user.defenses.each do |d|
+           li= d.description
 
   - elsif @user.attorney
     - for field in ['office_address', 'fax_number', 'bar_number']

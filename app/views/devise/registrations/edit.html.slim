@@ -20,11 +20,8 @@ h2 Edit #{resource_name.to_s.humanize}
     tr
       td Your defenses
       td: ul
-        - for defense in @all_defenses
-          ul
-            = check_box_tag "defense_ids[]", defense.id
-            = " #{defense.description}"
-            
+        = f.collection_check_boxes(:defense_ids, @all_defenses, :id, :description)
+
     - if resource.client
       = f.fields_for :client do |c|
         - client_fields.each do |field, hash|
