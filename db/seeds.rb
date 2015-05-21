@@ -4,10 +4,10 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicag },
-# { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#                         { name: 'Copenhagen' }])
+#            Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
-Question.create! YAML.load_file('seeds/questions.yml')
-Defense.create!  YAML.load_file('seeds/defense.yml')
+Question.create! YAML.load_file(Rails.root.join('db', 'seeds', 'questions.yml'))
+Defense.create!  YAML.load_file(Rails.root.join('db', 'seeds', 'defense.yml'))

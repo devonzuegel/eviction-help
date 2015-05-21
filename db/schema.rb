@@ -66,14 +66,6 @@ ActiveRecord::Schema.define(version: 20150516021239) do
   add_index "defenses_users", ["defense_id", "user_id"], name: "index_defenses_users_on_defense_id_and_user_id"
   add_index "defenses_users", ["user_id", "defense_id"], name: "index_defenses_users_on_user_id_and_defense_id"
 
-  create_table "joined_tables", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "defense_id"
-  end
-
-  add_index "joined_tables", ["defense_id"], name: "index_joined_tables_on_defense_id"
-  add_index "joined_tables", ["user_id"], name: "index_joined_tables_on_user_id"
-
   create_table "questions", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
