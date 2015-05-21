@@ -1,0 +1,12 @@
+tr
+  td= form_builder.label :name
+  td= form_builder.text_field :name, autofocus: true
+
+tr
+  td= form_builder.label :email
+  td= form_builder.email_field :email
+  
+- if devise_mapping.confirmable? && resource.pending_reconfirmation?
+  div
+    | Currently waiting confirmation for: 
+    = resource.unconfirmed_email

@@ -1,0 +1,11 @@
+= form_builder.fields_for :attorney do |a|
+
+  tr
+    td= a.label :office_address
+    td= a.text_field :office_address
+  tr
+    td= a.label :fax_number
+    td= a.text_field :fax_number
+  tr
+    td= a.label :bar_number
+    td= a.text_field :bar_number

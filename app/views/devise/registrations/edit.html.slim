@@ -5,50 +5,14 @@ h2 Edit #{resource_name.to_s.humanize}
   = render '/devise/shared/error_messages'
 
   table
-    tr
-      td= f.label :name
-      td= f.text_field :name, autofocus: true
-
-    tr
-      td= f.label :email
-      td= f.email_field :email
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      div
-        | Currently waiting confirmation for: 
-        = resource.unconfirmed_email
-
-    tr
-      td Your defenses
-      td: ul
-        - for defense in @all_defenses
-          li
-            = check_box_tag "defense_ids[]", defense.id
-            = " #{defense.description}"
+    = render 'user_form', form_builder: f
 
     - if resource.client
-      = f.fields_for :client do |c|
-        - client_fields.each do |field, hash|
-          tr
-            td
-              = c.label field, value: hash[:name] || field.humanize
-              br
-              = hash[:details]
-            = render 'shared/forms/variable_input_type', type: hash[:type],
-                                        form_builder: c, field_name: field
+      = render 'client_form', form_builder: f
 
     - elsif resource.attorney
-      = f.fields_for :attorney do |a|
+      = render 'attorney_form', form_builder: f
 
-        tr
-          td= a.label :office_address
-          td= a.text_field :office_address
-        tr
-          td= a.label :fax_number
-          td= a.text_field :fax_number
-        tr
-          td= a.label :bar_number
-          td= a.text_field :bar_number
-      
   p= f.submit "Update"
 
 p= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
