@@ -30,9 +30,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
 
     super do |resource|
-      puts "\n\n\n\n\n====================\n"
-      pp params
-      puts "\n====================\n\n\n\n\n"
+      defense_ids = params.fetch :defense_ids
+      resource.defenses = Defense.where(id: defense_ids)
     end
 
   end
@@ -105,7 +104,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                          :office_address, :fax_number,
                          :bar_number
                      ],
-                     # defenses_attributes: [:description, :id]
+                     defenses_attributes: [:description, :id]
                      )
     end
 end

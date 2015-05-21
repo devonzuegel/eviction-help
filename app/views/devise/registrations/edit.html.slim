@@ -17,6 +17,14 @@ h2 Edit #{resource_name.to_s.humanize}
         | Currently waiting confirmation for: 
         = resource.unconfirmed_email
 
+    tr
+      td Your defenses
+      td: ul
+        - for defense in @all_defenses
+          ul
+            = check_box_tag "defense_ids[]", defense.id
+            = " #{defense.description}"
+            
     - if resource.client
       = f.fields_for :client do |c|
         - client_fields.each do |field, hash|
@@ -24,17 +32,9 @@ h2 Edit #{resource_name.to_s.humanize}
             td
               = c.label field, value: hash[:name] || field.humanize
               br
-              = hash[:details] if hash[:details]
+              = hash[:details]
             = render 'shared/forms/variable_input_type', type: hash[:type],
                                         form_builder: c, field_name: field
-
-      tr
-        td Your defenses
-        td: ul
-          = f.fields_for :defenses, @all_defenses do |d|
-            li
-              = d.check_box :id, value: d.object.id
-              = " #{d.object.description}"
 
     - elsif resource.attorney
       = f.fields_for :attorney do |a|

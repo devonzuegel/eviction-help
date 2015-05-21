@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
     end
   end
 
+
+  def defenses_attributes=(attributes)
+  end
+
 end
