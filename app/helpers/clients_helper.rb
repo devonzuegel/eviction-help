@@ -1,11 +1,10 @@
 module ClientsHelper
   CLIENT_FIELDS = {
-      telephone:                    { type: 'text_field',   name: 'Telephone' },
+      telephone:                    { type: 'text_field',   name: '' },
       street_address:               { type: 'text_field',   name: 'Home address' },
-      mailing_address:              { type: 'text_field',   name: 'Mailing address', details: 'Possibly the same as your home address' },
+      mailing_address:              { type: 'text_field',   name: '', details: 'Possibly the same as your home address' },
       landlord:                     { type: 'text_field',   name: 'Your landlord' },
       other_people:                 { type: 'text_field',   name: 'Other people living in the house' },
-      other_problems:               { type: 'text_area',    name: 'Other problems with the house' },
       asked_for_repairs:            { type: 'check_box',    name: 'Have you asked your landlord to make repairs to fix this issue?' },
       repairs_made:                 { type: 'check_box',    name: 'Has your landlord made the repairs you requested?' },
       further_information:          { type: 'text_area',    name: 'Include any further details here.' },
@@ -13,6 +12,7 @@ module ClientsHelper
       offered_rent_date:            { type: 'date_field',   name: 'If so, when did you offer to pay the rent?' },
       offered_rent_amount:          { type: 'number_field', name: 'If so, how much did you offer to pay?' },
       offered_rent_method:          { type: 'text_field',   name: 'If so, how did you offer the rent?', details: '(In writing, by email, oral statement, etc.)' },
+      other_problems:               { type: 'text_area',    name: 'Other problems with the house' },
     }
 
 
@@ -24,8 +24,8 @@ module ClientsHelper
   end
 
 
-  def client_field_for(name, &blk)
-    client_fields.fetch(:name, &blk)
+  def client_field_name(field, &blk)
+    # client_fields.fetch(:telephone).fetch(:name, &blk) || field.humanize
   end
 
 
