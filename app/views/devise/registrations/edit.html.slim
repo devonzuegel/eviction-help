@@ -21,7 +21,7 @@ h2 Edit #{resource_name.to_s.humanize}
       td Your defenses
       td: ul
         - for defense in @all_defenses
-          ul
+          li
             = check_box_tag "defense_ids[]", defense.id
             = " #{defense.description}"
 
