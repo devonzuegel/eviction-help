@@ -1,0 +1,27 @@
+= form_for @court do |f|
+  - if @court.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@court.errors.count, "error")} prohibited this court from being saved:"
+      ul
+        - @court.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :street_address
+    = f.text_field :street_address
+  .field
+    = f.label :mailing_address
+    = f.text_field :mailing_address
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :zip_code
+    = f.text_field :zip_code
+  .field
+    = f.label :branch_name
+    = f.text_field :branch_name
+  .field
+    = f.label :county
+    = f.text_field :county
+  .actions = f.submit

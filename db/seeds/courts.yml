@@ -1,0 +1,35 @@
+---
+- :branch_name: Southern Branch Hall of Justice and Records
+  :street_address: 400 County Center
+  :mailing_address: 400 County Center
+  :city: Redwood City
+  :zip_code: 94063
+  :county: San Mateo
+
+- :branch_name: Southern Branch Annex
+  :street_address: 500 County Center
+  :mailing_address: 500 County Center
+  :city: Redwood City
+  :zip_code: 94063
+  :county: San Mateo
+
+- :branch_name: Northern Branch
+  :street_address: 1050 Mission
+  :mailing_address: 1050 Mission
+  :city: South San Francisco
+  :zip_code: 94080
+  :county: San Mateo
+
+- :branch_name: Central Branch
+  :street_address: 800 North Humboldt Street
+  :mailing_address: 800 North Humboldt Street
+  :city: San Mateo
+  :zip_code: 94401
+  :county: San Mateo
+
+- :branch_name: Juvenile
+  :street_address: 222 Paul Scannell Drive
+  :mailing_address: 222 Paul Scannell Drive
+  :city: San Mateo
+  :zip_code: 94402
+  :county: San Mateo

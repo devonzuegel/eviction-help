@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Street address:
+  = @court.street_address
+p
+  strong Mailing address:
+  = @court.mailing_address
+p
+  strong City:
+  = @court.city
+p
+  strong Zip code:
+  = @court.zip_code
+p
+  strong Branch name:
+  = @court.branch_name
+p
+  strong County:
+  = @court.county
+
+= link_to 'Edit', edit_court_path(@court)
+'|
+= link_to 'Back', courts_path

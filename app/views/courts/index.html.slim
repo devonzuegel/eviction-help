@@ -1,0 +1,31 @@
+h1 Listing courts
+
+table
+  thead
+    tr
+      th Street address
+      th Mailing address
+      th City
+      th Zip code
+      th Branch name
+      th County
+      th
+      th
+      th
+
+  tbody
+    - @courts.each do |court|
+      tr
+        td = court.street_address
+        td = court.mailing_address
+        td = court.city
+        td = court.zip_code
+        td = court.branch_name
+        td = court.county
+        td = link_to 'Show', court
+        td = link_to 'Edit', edit_court_path(court)
+        td = link_to 'Destroy', court, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Court', new_court_path
