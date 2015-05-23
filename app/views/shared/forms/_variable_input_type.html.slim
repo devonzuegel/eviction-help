@@ -1,13 +1,15 @@
-- case type
-  - when 'text_field'
-    td= form_builder.text_field field_name
-  - when 'text_area'
-    td= form_builder.text_area field_name
-  - when 'check_box'
-    td
-      = form_builder.check_box field_name
-      = " Yes"
-  - when 'date_field'
-    td= form_builder.date_field field_name
-  - when 'number_field'
-    td= form_builder.number_field field_name
+tr
+  td= f.label field_name
+  td
+    - case type
+      - when 'text_field'
+        = f.text_field field_name
+      - when 'text_area'
+        = f.text_area field_name
+      - when 'check_box'
+        = f.check_box field_name
+        = " Yes"
+      - when 'date_field'
+        = f.date_field field_name
+      - when 'number_field'
+        = f.number_field field_name

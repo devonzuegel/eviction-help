@@ -12,6 +12,7 @@ module ClientsHelper
       offered_rent_date:            { type: 'date_field',   name: 'If so, when did you offer to pay the rent?' },
       offered_rent_amount:          { type: 'number_field', name: 'If so, how much did you offer to pay?' },
       offered_rent_method:          { type: 'text_field',   name: 'If so, how did you offer the rent?', details: '(In writing, by email, oral statement, etc.)' },
+      defenses:                     { },
       other_problems:               { type: 'text_area',    name: 'Other problems with the house' },
     }
 
