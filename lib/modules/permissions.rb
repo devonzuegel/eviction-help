@@ -1,7 +1,7 @@
 module Permissions
 
   def authenticate_admin
-    unless current_user.god_mode
+    unless current_user && current_user.god_mode
       flash[:error] = "Access denied."
       go_back
     end

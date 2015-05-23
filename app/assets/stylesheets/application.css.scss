@@ -17,6 +17,19 @@
 
 @import "partials/all";
 
+nav {
+  margin-bottom: 30px;
+
+  a {
+    font-size: 1.1em;
+    margin: 0 15px 0 5px;
+    text-transform: uppercase;
+    color: $grey-pale;
+
+    &:hover { color: $grey; }
+  }
+}
+
 body { 
   background: $grey-pale !important;
   margin: 0;

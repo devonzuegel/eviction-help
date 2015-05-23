@@ -3,11 +3,11 @@ h1 Listing courts
 table
   thead
     tr
+      th Branch name
       th Street address
       th Mailing address
       th City
       th Zip code
-      th Branch name
       th County
       th
       th
@@ -16,11 +16,11 @@ table
   tbody
     - @courts.each do |court|
       tr
+        td = court.branch_name
         td = court.street_address
         td = court.mailing_address
         td = court.city
         td = court.zip_code
-        td = court.branch_name
         td = court.county
         td = link_to 'Show', court
         td = link_to 'Edit', edit_court_path(court)
