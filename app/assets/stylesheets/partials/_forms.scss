@@ -1,0 +1,17 @@
+input {
+  padding: 5px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+
+  &:focus {
+    border-bottom: solid 2px #969696;
+    outline: none;
+  }
+}
+
+.field_with_errors, .field_with_errors label {
+  color: #b94a48 !important;
+  background: none !important;
+  font-weight: bolder;
+}

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'forms/answer'
+
   resources :courts
   resources :defenses
   resources :cases

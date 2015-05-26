@@ -113,19 +113,16 @@ body {
 }
 
 button, .button_to input[type='submit'] {
-  background-color: $grey;
-  border: none;
-  color: white !important;
+  background-color: rgba(255, 255, 255, .9);
+  border: 2px white solid;
   border-radius: 3px;
   padding: 10px;
 
   text-transform: uppercase;
-  font {
-    size: 2em;
-  }
+  font-size: 20px;
     
   &:hover {
     cursor: pointer;
-    background-color: $grey-dark;
+    background-color: rgba(255, 255, 255, .95);
   }
 }

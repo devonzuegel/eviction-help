@@ -12,12 +12,12 @@
         =hidden_field_tag :prev, q.prev_id
 
         .response
-          =label_tag         :response,  "#{q.response1}"
           =radio_button_tag  :response,  q.next1_id
+          =label_tag         :response,  " #{q.response1}"
 
         .response
-          =label_tag         :response,  "#{q.response2}"
           =radio_button_tag  :response,  q.next2_id
+          =label_tag         :response,  " #{q.response2}"
 
         - if !q.prev_id.blank?
           =submit_tag 'Previous', value: 'Previous', name: 'prev'
