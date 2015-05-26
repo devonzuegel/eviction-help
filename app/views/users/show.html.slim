@@ -22,7 +22,7 @@ table
       - else
           tr
               td= field.to_s.humanize
-              td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
+              td= (field != :telephone) ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
 
   - elsif @user.attorney
     - for field in ['office_address', 'fax_number', 'bar_number']
