@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150523202056) do
+ActiveRecord::Schema.define(version: 20150526014928) do
 
   create_table "attorneys", force: :cascade do |t|
     t.integer  "user_id"
@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 20150523202056) do
     t.date     "offered_rent_date"
     t.integer  "offered_rent_amount"
     t.string   "offered_rent_method"
+    t.integer  "attorney_id"
   end
 
+  add_index "clients", ["attorney_id"], name: "index_clients_on_attorney_id"
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
 
   create_table "courts", force: :cascade do |t|

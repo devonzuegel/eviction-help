@@ -33,4 +33,12 @@ module ClientsHelper
   def name_for(field)
     client_field_for(field).name
   end
+
+  def attorney_id(client)
+    if client.attorney != nil
+      client.attorney.id
+    else
+      nil
+    end
+  end
 end

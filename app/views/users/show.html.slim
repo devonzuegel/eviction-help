@@ -7,17 +7,22 @@ table
       td= @user[field]
   
   - if @user.client
-    - for field in client_fields
-      tr
-          td= field.humanize
-          td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
-
     tr
-      td Your defenses:
-      td
-        ul
-         - @user.defenses.each do |d|
-           li= d.description
+      td Your attorney
+      td= @user.client.attorney.user.name if !!@user.client.attorney
+
+    - client_fields.each do |field, hash|
+      - if field == :defenses
+        tr
+          td Your defenses:
+          td
+            ul
+             - @user.defenses.each do |d|
+               li= d.description
+      - else
+          tr
+              td= field.to_s.humanize
+              td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
 
   - elsif @user.attorney
     - for field in ['office_address', 'fax_number', 'bar_number']

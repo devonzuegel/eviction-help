@@ -29,10 +29,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-
     super do |resource|
       defense_ids = params.fetch(:defense_ids, [])
       resource.defenses = Defense.where(id: defense_ids)
+      puts "\n\n\n-----------------"
+      pp params
+      puts "-----------------\n\n\n"
+      # resource.client.attorney = Attorney.find(params[:attorney].to_i)
+      # resource.client.save
     end
 
   end
@@ -100,7 +104,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
                          :asked_for_repairs, :repairs_made, 
                          :further_information, :offered_rent_before_deadline, 
                          :offered_rent_date, :offered_rent_amount, 
-                         :offered_rent_method
+                         :offered_rent_method,
+                         :attorney_id
                      ], attorney_attributes: [
                          :office_address, :fax_number,
                          :bar_number
