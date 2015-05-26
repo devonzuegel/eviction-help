@@ -23,6 +23,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     @all_defenses = Defense.all
+    @attorneys = Attorney.all
     super
   end
 

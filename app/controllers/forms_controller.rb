@@ -5,9 +5,9 @@ class FormsController < ApplicationController
 
   def answer
 
-    template_file = 'app/assets/pdfs/templates/ud105-blank.pdf'
-    prawn_file = 'app/assets/pdfs/temp/temp.pdf'
-    output_file = 'app/assets/pdfs/output/output.pdf'
+    template_file = Rails.root.join('app', 'assets', 'pdfs', 'templates', 'ud105-blank.pdf')
+    prawn_file    = Rails.root.join('app', 'assets', 'pdfs', 'temp', 'temp.pdf')
+    output_file   = Rails.root.join('app', 'assets', 'pdfs', 'output', 'output.pdf')
 
     Prawn::Document.generate(prawn_file) do
       # Generate whatever you want here.

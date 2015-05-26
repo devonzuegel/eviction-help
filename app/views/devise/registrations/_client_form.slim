@@ -1,10 +1,13 @@
 = form_builder.fields_for :client do |c|
-
+  tr
+    td Your attorney
+    td= select_tag "attorneys", options_for_select(Attorney.all.collect{ |a| [a.user.name, a.id] })
+  
   - client_fields.each do |field, hash|
     - if field == :defenses
       tr
         td Your defenses
-        td: ul
+        td: ul.checkboxes
           - for defense in @all_defenses
             li
               = check_box_tag "defense_ids[]", defense.id

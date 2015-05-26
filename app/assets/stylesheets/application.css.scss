@@ -30,6 +30,13 @@ nav {
   }
 }
 
+p, label, li, td, table {
+  font-size: 1.15em;
+  font-weight: 200 !important;
+}
+
+ul { padding: 0; }
+
 body { 
   background: $grey-pale !important;
   margin: 0;
@@ -117,6 +124,7 @@ button, .button_to input[type='submit'] {
   border: 2px white solid;
   border-radius: 3px;
   padding: 10px;
+  margin: 5px;
 
   text-transform: uppercase;
   font-size: 20px;

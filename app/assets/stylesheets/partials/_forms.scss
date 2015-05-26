@@ -1,4 +1,4 @@
-input {
+input, textarea {
   padding: 5px;
   border: none;
   border-bottom: solid 2px #c9c9c9;
@@ -8,6 +8,15 @@ input {
     border-bottom: solid 2px #969696;
     outline: none;
   }
+
+  &[type='checkbox'] {
+    margin: 5px;
+  }
+}
+
+ul.checkboxes {
+  padding: 0;
+  list-style: none;
 }
 
 .field_with_errors, .field_with_errors label {

@@ -7,7 +7,7 @@ table
       td= @user[field]
   
   - if @user.client
-    - for field in @client_fields
+    - for field in client_fields
       tr
           td= field.humanize
           td= (field != 'telephone') ? @user.client[field] : number_to_phone(@user.client[field], area_code: true) 
