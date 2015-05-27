@@ -70,8 +70,8 @@ class AnswerForm
     end
 
     def part_3(pdf)
-      pdf.text_box 'X', at: [36, 248], size: 11 unless @user.defenses.empty?
-      pdf.text_box 'X', at: [36, 43], size: 11 unless @user.defenses.empty?
+      pdf.text_box 'X', at: [36, 247], size: 11 unless @user.defenses.empty?
+      pdf.text_box 'X', at: [36, 210], size: 11 if @user.client[:offered_rent_before_deadline]
     end
 
     def pdf(*args)
