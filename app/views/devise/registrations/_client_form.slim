@@ -1,11 +1,12 @@
 = form_builder.fields_for :client do |c|
-  tr
-    td Your attorney
-    td= c.select :attorney_id, 
-        options_for_select([nil] + Attorney.all.collect{ |a| [a.user.name, a.id] }, attorney_id(@user.client))
-  
+
   - client_fields.each do |field, hash|
-    - if field == :defenses
+    - if hash[:type] == :header
+      tr
+        td(colspan='100%')
+          h3: b= hash[:name]
+
+    - elsif field == :defenses
       tr
         td Have you experienced any of the following problems with the property?
         td: ul.checkboxes
@@ -13,6 +14,13 @@
             li
               = check_box_tag "defense_ids[]", defense.id
               = " #{defense.description}"
+    
+    - elsif field == :attorney
+      tr
+        td Your attorney
+        td= c.select :attorney_id, 
+            options_for_select(["I have not yet been assigned an attorney"] + Attorney.all.collect{ |a| [a.user.name, a.id] }, attorney_id(@user.client))
+
     - else
       = render 'shared/forms/variable_input_type', type: hash[:type], 
                                                  f: c, field_name: field

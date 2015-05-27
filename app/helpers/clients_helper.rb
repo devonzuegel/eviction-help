@@ -3,16 +3,23 @@ module ClientsHelper
       telephone:                    { type: 'text_field',   name: '' },
       street_address:               { type: 'text_field',   name: 'Home address' },
       mailing_address:              { type: 'text_field',   name: '', details: 'Possibly the same as your home address' },
+      attorney:                     { },
       landlord:                     { type: 'text_field',   name: 'Your landlord' },
-      other_people:                 { type: 'text_field',   name: 'Other people living in the house' },
-      asked_for_repairs:            { type: 'check_box',    name: 'Have you asked your landlord to make repairs to fix this issue?' },
-      repairs_made:                 { type: 'check_box',    name: 'Has your landlord made the repairs you requested?' },
-      further_information:          { type: 'text_area',    name: 'Include any further details here.' },
-      offered_rent_before_deadline: { type: 'check_box',    name: 'Did you offer to pay your rent before the deadline?' },
-      offered_rent_date:            { type: 'date_field',   name: 'If so, when did you offer to pay the rent?' },
-      offered_rent_amount:          { type: 'number_field', name: 'If so, how much did you offer to pay?' },
-      offered_rent_method:          { type: 'text_field',   name: 'If so, how did you offer the rent?', details: '(In writing, by email, oral statement, etc.)' },
+      other_people:                 { type: 'text_field',   name: 'Please list anybody else who lives with you in the property.' },
+      # ---------------------------------------------------------------------------------
+      condition_of_property:        { type: :header,        name: 'Condition of Property' },
       defenses:                     { },
+      asked_for_repairs:            { type: 'check_box',    name: 'Did you ask the landlord or building attendant to make repairs?' },
+      repairs_made:                 { type: 'check_box',    name: 'Were repairs made?' },
+      further_information:          { type: 'text_area',    name: 'Include any further details here.' },
+      # ---------------------------------------------------------------------------------
+      payment_of_rent:              { type: :header,        name: 'Payment of Rent' },
+      offered_rent_before_deadline: { type: 'check_box',    name: 'Did you offer to pay rent before the due date provided by the landlord?' },
+      offered_rent_date:            { type: 'date_field',   name: 'When did you offer?' },
+      offered_rent_amount:          { type: 'number_field', name: 'How much did you offer?' },
+      offered_rent_method:          { type: 'text_field',   name: 'If so, how did you offer the rent?', details: '(In writing, by email, oral statement, etc.)' },
+      # ---------------------------------------------------------------------------------
+      other:                        { type: :header,        name: 'Other' },
       other_problems:               { type: 'text_area',    name: 'Other problems with the house' },
     }
 

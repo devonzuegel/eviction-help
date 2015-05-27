@@ -5,6 +5,9 @@ h1 Edit profile
   = render '/devise/shared/error_messages'
 
   table
+    tr
+      td(colspan='100%')
+        h3: b Background Information
     = render 'user_form', form_builder: f
 
     - if resource.client
