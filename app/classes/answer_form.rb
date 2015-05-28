@@ -34,6 +34,7 @@ class AnswerForm
       pdf.start_new_page
       pdf.image pages[0][:template], width: pdf.bounds.width + 15
       pdf.font "Courier"
+      pdf.fill_color "0000cc"
       attorney_box pdf
       court_box pdf
       plaintiff_defendant_box pdf
@@ -41,18 +42,7 @@ class AnswerForm
       part_3 pdf
     end
 
-    def page_1 pdf
-      pdf.start_new_page
-      pdf.image pages[1][:template], width: pdf.bounds.width + 15
-    end
-
-    def page_2 pdf
-      pdf.start_new_page
-      pdf.image pages[2][:template], width: pdf.bounds.width + 15
-    end
-
     def attorney_box pdf
-      pdf.fill_color "0000cc"
       pdf.text_box attorney_info, at: [4 + coords[:x], 696 + coords[:y]], size: 9
       pdf.text_box 'n/a', at: [60 + coords[:x], 653 + coords[:y]], size: 9
       pdf.text_box number_to_phone(attorney.fax_number, area_code: true), at: [228 + coords[:x], 653 + coords[:y]], size: 9
@@ -88,6 +78,18 @@ class AnswerForm
     def part_3 pdf
       pdf.text_box 'X', at: [36 + coords[:x], 247 + coords[:y]], size: 11 unless @user.defenses.empty?
       pdf.text_box 'X', at: [36 + coords[:x], 210 + coords[:y]], size: 11 if @user.client[:offered_rent_before_deadline]
+    end
+
+    def page_1 pdf
+      pdf.start_new_page
+      pdf.image pages[1][:template], width: pdf.bounds.width + 15
+      pdf.text_box "X", at: [36 + coords[:x], 628 + coords[:y]], size: 9
+      pdf.text_box @user.name, at: [5 + coords[:x], 164 + coords[:y]], size: 12
+    end
+
+    def page_2 pdf
+      pdf.start_new_page
+      pdf.image pages[2][:template], width: pdf.bounds.width + 15
     end
 
     def pdf_file *args
