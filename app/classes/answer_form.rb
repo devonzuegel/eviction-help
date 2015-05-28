@@ -90,6 +90,15 @@ class AnswerForm
     def page_2 pdf
       pdf.start_new_page
       pdf.image pages[2][:template], width: pdf.bounds.width + 15
+      defenses = @user.defenses.collect { |d| smart_case(d.description) }.to_sentence
+      sentence = "Property was inhabitable due to #{defenses}."
+      pdf.text_box sentence, at: [36 + coords[:x], 628 + coords[:y]], size: 11, width: 450
+    end
+
+    def smart_case(field)
+      field.to_s.split(' ').map { |word|
+        /[A-Z][A-Z]+/.match(word) ? word : word.downcase
+      }.join(' ')
     end
 
     def pdf_file *args
